@@ -1,0 +1,44 @@
+
+NEXT.js set up with MUI version 5
+
+to run the app 
+'yarn dev'   command
+--------1 step configure @emotion.------------
+1) 
+yarn add @emotion/react   //install emotion package
+2)
+add this to .eslintrc file:
+"extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"], // make sure prettier is last
+2)
+@emotion/eslint-plugin          // for error output, making shur that we are following the best practices for the Emotion plugin.
+add some config to the 
+it gives error if , you imported-->
+import styled from 'react-emotion'
+the correct way will be   --->
+import styled from @emotion/styled
+add this to .eslintrc file -->
+  "plugins": ["@emotion"],
+  "rules": {
+    "@emotion/jsx-import": "error",  //this line, auto adds /* @jsx jsx */ to our Compoents files.
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error"
+  },
+
+/* @jsx jsx */   this thins required for every component page, without it we can use @emotion jsx, props like 'css' from emotion doesn't realize that they're in  a emotion jsx componet. Without 'css' props can't add some style rules to the components. 
+/** @jsxRuntime classic */        this code for the React 17 new version, which has two runtime options,old one is  'classic' and the new one is 'automatic'.
+
+3)create custom babel config for Next.js file, 
+.babelrc  the file name in project root folder. 
+and install optional plugin, that helps optimize slyles, creates a better developer experince overall. Some of the features that come with the lugin are 
+* minification
+* dead code elimination
+* source maps
+* components as selectors
+
+yarn add --dev @emotion/babel-plugin
+
+Now we can start implementing some Components.
+
+in EmotionButton.tsx the FC stands for functional component.
+

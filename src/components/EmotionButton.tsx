@@ -1,4 +1,4 @@
-/** @jsxRuntime classic /
+/** @jsxRuntime classic */
 /* @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { FC } from 'react';
