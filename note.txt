@@ -1,6 +1,8 @@
 
 NEXT.js set up with MUI version 5
 
+all filed have .txs extention. A TSX file is a TypeScript (. TS) file written using JSX syntax
+
 to run the app 
 'yarn dev'   command
 --------1 step configure @emotion.------------
@@ -40,5 +42,12 @@ yarn add --dev @emotion/babel-plugin
 
 Now we can start implementing some Components.
 
-in EmotionButton.tsx the FC stands for functional component.
+in EmotionButton.tsx the FC stands for functional component  created with @emotion
 
+------Prefferable way how to use @emotion-----------
+with styled APi, which is very similar to styled Component.
+for that we can add another library called '@emotion\styled'  to install it --> 
+yarn add @emotion/styled
+
+that gives us access ro styled elements.
+StyledEmotionButton.tsx   component created with @emotion/styled.
